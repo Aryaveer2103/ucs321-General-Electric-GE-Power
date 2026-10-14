@@ -1,0 +1,10 @@
+{
+  "rule": "lowest validation MAE within each track (ties broken by lower fit time)",
+  "decided_on": "validation profiles only; test profiles not read in this stage",
+  "winners": {
+    "A": "A/lightgbm[t2]/enhanced",
+    "B": "B/lightgbm[t2]/enhanced+ewma_long_rolling"
+  },
+  "best_history_set": "ewma_long_rolling",
+  "frozen_utc": "2026-10-14T19:15:50+00:00"
+}

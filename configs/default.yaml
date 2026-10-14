@@ -1,0 +1,97 @@
+# Single source of truth for the experiment. Changing a value here changes the run.
+seed: 42
+
+dataset:
+  kaggle_handle: wkirgsn/electric-motor-temperature
+  file_name: measures_v2.csv
+  sampling_hz: 2.0            # documented by the dataset authors; no timestamps are shipped
+  expected_profiles: 69
+  expected_rows: 1330816
+  license: "CC BY-SA 4.0"
+
+columns:
+  target: stator_winding
+  group: profile_id
+  # operational measurements available at inference time
+  inputs: [ambient, coolant, motor_speed, torque, i_d, i_q, u_d, u_q]
+  # measured internal temperatures: NEVER allowed as features (leakage / not available in deployment)
+  forbidden_features: [stator_winding, stator_tooth, stator_yoke, pm, profile_id]
+
+# plausibility limits used for validation warnings (not for deleting rows)
+physical_ranges:
+  ambient: [-20, 60]
+  coolant: [-20, 120]
+  stator_winding: [-20, 200]
+  motor_speed: [-10000, 10000]
+  torque: [-500, 500]
+  i_d: [-600, 600]
+  i_q: [-600, 600]
+  u_d: [-400, 400]
+  u_q: [-400, 400]
+
+split:
+  seed: 42
+  # profiles are sorted by peak winding temperature and chunked; each chunk contributes
+  # val_per_chunk / test_per_chunk profiles so all splits cover mild and severe thermal loads.
+  chunk_size: 7
+  val_per_chunk: 1
+  test_per_chunk: 1
+
+features:
+  enhanced_instant: [i_sq, i_mag, u_mag, abs_speed, abs_torque, p_mech_w, p_elec_proxy,
+                     p_loss_proxy, ambient_minus_coolant]
+  # signals whose causal history is summarised (all are available at inference time)
+  history_signals: [i_sq, abs_speed, abs_torque, coolant]
+  # time constants / windows in SECONDS (converted with sampling_hz); a set may override `signals`
+  history_sets:
+    none: {ewma_tau_s: [], rolling_s: []}
+    rolling_only: {ewma_tau_s: [], rolling_s: [60, 300]}
+    ewma_short: {ewma_tau_s: [30, 120], rolling_s: []}
+    ewma_medium: {ewma_tau_s: [30, 120, 600], rolling_s: []}
+    ewma_long_loads_only:
+      signals: [i_sq, abs_speed, abs_torque]
+      ewma_tau_s: [30, 120, 600, 1800, 7200]
+      rolling_s: []
+    ewma_long: {ewma_tau_s: [30, 120, 600, 1800, 7200], rolling_s: []}
+    ewma_long_rolling: {ewma_tau_s: [30, 120, 600, 1800, 7200], rolling_s: [60, 300]}
+  superset_history_set: ewma_long_rolling   # computed once; every other set is a column subset
+
+training:
+  fast:
+    train_profile_fraction: 0.5   # random (seeded) subset of TRAIN profiles
+    row_stride: 20                # 2 Hz -> one training row every 10 s
+    rf_rows: 30000
+    lgbm_trials: 4
+    ablation_seeds: 2
+    lgbm_max_rounds: 600
+  full:
+    train_profile_fraction: 1.0
+    row_stride: 2                 # 2 Hz -> one training row per second (features use full-rate history)
+    rf_rows: 150000
+    lgbm_trials: 14
+    ablation_seeds: 3
+    lgbm_max_rounds: 3000
+  n_jobs: 8
+  early_stopping_rounds: 100
+
+lgbm_search_space:
+  num_leaves: [15, 31, 63, 127, 255]
+  learning_rate: [0.03, 0.05, 0.08, 0.12]
+  min_child_samples: [20, 50, 100, 300, 1000]
+  subsample: [0.6, 0.8, 1.0]
+  colsample_bytree: [0.6, 0.8, 1.0]
+  reg_lambda: [0.0, 1.0, 10.0]
+
+evaluation:
+  temp_bins: [0, 40, 60, 80, 100, 200]
+  permutation_importance_rows: 40000
+  permutation_repeats: 3
+
+monitoring:
+  smoothing_window_s: 60        # rolling mean of the residual
+  persistence_s: 120            # smoothed residual must stay outside the band this long
+  band_quantile: 0.995          # empirical quantile of |smoothed residual| on VALIDATION profiles
+  injection_offsets_c: [2, 5, 10, 15]   # synthetic bias sensitivity illustration
+
+forecast:
+  horizon_s: 60

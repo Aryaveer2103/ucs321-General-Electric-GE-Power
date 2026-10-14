@@ -1,0 +1,48 @@
+[project]
+name = "motor-thermal"
+version = "0.1.0"
+description = "Virtual winding-temperature sensor for a PMSM (UCS321 mini project #6)"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = { text = "MIT" }
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "pyarrow>=15",
+    "scikit-learn>=1.5",
+    "lightgbm>=4.7",
+    "matplotlib>=3.8",
+    "plotly>=5.20",
+    "streamlit>=1.35",
+    "kagglehub>=0.3",
+    "pyyaml>=6",
+    "joblib>=1.4",
+    "python-pptx>=1.0",
+    "psutil>=5.9",
+]
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+motor-thermal = "motor_thermal.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/motor_thermal"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = ["slow: end-to-end tests that train models"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests", "app", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]  # long prose strings; the formatter wraps code at 100

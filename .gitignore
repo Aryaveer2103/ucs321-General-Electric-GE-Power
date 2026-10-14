@@ -1,0 +1,24 @@
+# data & caches (never commit raw dataset or credentials)
+data/*
+!data/.gitkeep
+.kaggle/
+kaggle.json
+.env
+
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# large/ephemeral outputs
+artifacts/**/predictions/
+artifacts/**/cache/
+*.log
+.DS_Store
+artifacts/**/models_all/
+artifacts/_tmp_size.joblib

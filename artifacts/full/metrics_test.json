@@ -1,0 +1,1292 @@
+{
+  "mode": "full",
+  "config_hash": "b77edc0501dd",
+  "selection": {
+    "rule": "lowest validation MAE within each track (ties broken by lower fit time)",
+    "decided_on": "validation profiles only; test profiles not read in this stage",
+    "winners": {
+      "A": "A/lightgbm[t2]/enhanced",
+      "B": "B/lightgbm[t2]/enhanced+ewma_long_rolling"
+    },
+    "best_history_set": "ewma_long_rolling",
+    "frozen_utc": "2026-10-14T19:15:50+00:00"
+  },
+  "test_profiles": [
+    7,
+    14,
+    21,
+    26,
+    27,
+    32,
+    64,
+    69,
+    76,
+    79
+  ],
+  "test_rows": 198499,
+  "track_A": {
+    "candidate": "A/lightgbm[t2]/enhanced",
+    "n_features": 17,
+    "columns": [
+      "ambient",
+      "coolant",
+      "motor_speed",
+      "torque",
+      "i_d",
+      "i_q",
+      "u_d",
+      "u_q",
+      "i_sq",
+      "i_mag",
+      "u_mag",
+      "abs_speed",
+      "abs_torque",
+      "p_mech_w",
+      "p_elec_proxy",
+      "p_loss_proxy",
+      "ambient_minus_coolant"
+    ],
+    "test": {
+      "aggregate": {
+        "mae": 9.525980447747742,
+        "rmse": 13.344772574060851,
+        "r2": 0.7947105886061566,
+        "median_ae": 6.9410053214438605,
+        "p95_ae": 27.306499783635058,
+        "max_ae": 97.5430733149818,
+        "bias": -0.24503676442145395,
+        "n": 198499
+      },
+      "profile_level": {
+        "macro_mae": 9.039508690978137,
+        "median_profile_mae": 9.768912413377473,
+        "worst_profile_mae": 13.190126922635605,
+        "worst_profile_id": 32,
+        "best_profile_mae": 2.815239347860116,
+        "n_profiles": 10
+      }
+    },
+    "per_profile": [
+      {
+        "profile_id": 32,
+        "mae": 13.190126922635605,
+        "rmse": 19.076453910357245,
+        "r2": 0.6312577563723243,
+        "median_ae": 8.579332904208243,
+        "p95_ae": 45.63150975193571,
+        "max_ae": 83.71888399361616,
+        "bias": -5.137640104234154,
+        "n": 20960
+      },
+      {
+        "profile_id": 21,
+        "mae": 6.881394757273096,
+        "rmse": 8.769328013763918,
+        "r2": 0.9018459644636287,
+        "median_ae": 7.136208144647213,
+        "p95_ae": 11.214032798910651,
+        "max_ae": 56.52783519558077,
+        "bias": 3.3075133865117863,
+        "n": 17321
+      },
+      {
+        "profile_id": 7,
+        "mae": 2.815239347860116,
+        "rmse": 3.8634186233553423,
+        "r2": 0.6536876251451788,
+        "median_ae": 1.6733579537544685,
+        "p95_ae": 7.481186208379279,
+        "max_ae": 21.76162157483857,
+        "bias": 2.156529058441076,
+        "n": 14651
+      },
+      {
+        "profile_id": 27,
+        "mae": 11.229152625961182,
+        "rmse": 15.748181719794276,
+        "r2": 0.7762271676909873,
+        "median_ae": 8.156881212950339,
+        "p95_ae": 33.02804962165234,
+        "max_ae": 97.5430733149818,
+        "bias": -4.156476147567347,
+        "n": 35361
+      },
+      {
+        "profile_id": 26,
+        "mae": 7.33504657803451,
+        "rmse": 10.442493427040251,
+        "r2": 0.9385294086938154,
+        "median_ae": 6.106350742599915,
+        "p95_ae": 23.144431184303617,
+        "max_ae": 71.13752052504199,
+        "bias": -2.8117532344495473,
+        "n": 16666
+      },
+      {
+        "profile_id": 14,
+        "mae": 9.980519590721926,
+        "rmse": 12.255404667354902,
+        "r2": 0.5051075191756347,
+        "median_ae": 5.8405310521385445,
+        "p95_ae": 20.400982545204773,
+        "max_ae": 47.566734957511585,
+        "bias": 9.654805988143995,
+        "n": 18598
+      },
+      {
+        "profile_id": 69,
+        "mae": 9.55730523603302,
+        "rmse": 11.853291351722573,
+        "r2": 0.6567024110696085,
+        "median_ae": 7.9622676935979655,
+        "p95_ae": 23.48187607611945,
+        "max_ae": 33.57080795519825,
+        "bias": 0.09185101924668165,
+        "n": 15350
+      },
+      {
+        "profile_id": 76,
+        "mae": 10.152538207029258,
+        "rmse": 13.476337209737128,
+        "r2": 0.6058056959565883,
+        "median_ae": 7.989017881995039,
+        "p95_ae": 30.368907433709627,
+        "max_ae": 53.59811266497732,
+        "bias": 1.8641090493772625,
+        "n": 22188
+      },
+      {
+        "profile_id": 64,
+        "mae": 8.944135037932389,
+        "rmse": 11.25785699819345,
+        "r2": 0.41495575299141496,
+        "median_ae": 7.589517194208334,
+        "p95_ae": 22.44469325635835,
+        "max_ae": 40.96645520284291,
+        "bias": -1.551058840975962,
+        "n": 6250
+      },
+      {
+        "profile_id": 79,
+        "mae": 10.309628606300267,
+        "rmse": 13.65886101087689,
+        "r2": 0.5940413167828933,
+        "median_ae": 8.367221097856312,
+        "p95_ae": 25.578747017599134,
+        "max_ae": 71.73506104501678,
+        "bias": -1.5612203570679062,
+        "n": 31154
+      }
+    ],
+    "by_temperature_range": [
+      {
+        "temp_range": "(-0.001, 40.0]",
+        "n": 46985,
+        "mae": 8.964953876324783,
+        "p95_ae": 21.866602795413108,
+        "bias": 8.5350323432525,
+        "rmse": 12.149707862872377
+      },
+      {
+        "temp_range": "(40.0, 60.0]",
+        "n": 36377,
+        "mae": 8.03540556232421,
+        "p95_ae": 23.312179710686635,
+        "bias": 4.343605620493296,
+        "rmse": 10.638264738079851
+      },
+      {
+        "temp_range": "(60.0, 80.0]",
+        "n": 41346,
+        "mae": 8.313926153639114,
+        "p95_ae": 24.24715500702926,
+        "bias": -0.005416239240264588,
+        "rmse": 11.219898859430264
+      },
+      {
+        "temp_range": "(80.0, 100.0]",
+        "n": 32944,
+        "mae": 10.720197773835949,
+        "p95_ae": 30.382810613398675,
+        "bias": -5.897583854086991,
+        "rmse": 14.308685985479045
+      },
+      {
+        "temp_range": "(100.0, 200.0]",
+        "n": 40847,
+        "mae": 11.762467272212819,
+        "p95_ae": 33.99075686344555,
+        "bias": -10.114609314971178,
+        "rmse": 17.385970732881727
+      }
+    ],
+    "by_operating_region": [
+      {
+        "speed_region": "high",
+        "torque_region": "high",
+        "n": 24388,
+        "mae": 10.789067974062647
+      },
+      {
+        "speed_region": "high",
+        "torque_region": "low",
+        "n": 21985,
+        "mae": 7.953035156177132
+      },
+      {
+        "speed_region": "high",
+        "torque_region": "mid",
+        "n": 39150,
+        "mae": 8.526138962578118
+      },
+      {
+        "speed_region": "low",
+        "torque_region": "high",
+        "n": 15489,
+        "mae": 5.400655379895762
+      },
+      {
+        "speed_region": "low",
+        "torque_region": "low",
+        "n": 31918,
+        "mae": 9.676121723069512
+      },
+      {
+        "speed_region": "low",
+        "torque_region": "mid",
+        "n": 5013,
+        "mae": 8.952912751841076
+      },
+      {
+        "speed_region": "mid",
+        "torque_region": "high",
+        "n": 35678,
+        "mae": 9.941433678777303
+      },
+      {
+        "speed_region": "mid",
+        "torque_region": "low",
+        "n": 9092,
+        "mae": 15.72359551791442
+      },
+      {
+        "speed_region": "mid",
+        "torque_region": "mid",
+        "n": 15786,
+        "mae": 11.662512837396402
+      }
+    ],
+    "by_elapsed_time_in_profile": [
+      {
+        "elapsed": "0-10 min",
+        "n": 12010,
+        "mae": 15.441947040914625
+      },
+      {
+        "elapsed": "10-30 min",
+        "n": 24000,
+        "mae": 9.682838773308433
+      },
+      {
+        "elapsed": "30-60 min",
+        "n": 35049,
+        "mae": 7.05763190706952
+      },
+      {
+        "elapsed": "1-2 h",
+        "n": 64800,
+        "mae": 8.320452626046341
+      },
+      {
+        "elapsed": ">2 h",
+        "n": 62640,
+        "mae": 10.959824513058898
+      }
+    ],
+    "region_edges": {
+      "abs_speed_rpm": [
+        -Infinity,
+        796.4855346679688,
+        3051.398681640625,
+        Infinity
+      ],
+      "abs_torque_nm": [
+        -Infinity,
+        15.17084789276123,
+        82.71675872802734,
+        Infinity
+      ]
+    },
+    "inference": {
+      "batch_rows_per_s": 323881.39462754084,
+      "single_row_latency_ms": 2.0886999991489574
+    },
+    "validation_metrics": {
+      "val_mae": 8.803901106231926,
+      "val_rmse": 12.095366090000715,
+      "val_r2": 0.8496319275980961,
+      "val_median_ae": 6.243490039541143,
+      "val_p95_ae": 24.871113760324715,
+      "val_max_ae": 71.66733964344698,
+      "val_bias": -0.9317648802352672,
+      "val_macro_mae": 8.513630095762153,
+      "val_worst_profile_mae": 12.671214684469259
+    },
+    "importance_top": [
+      {
+        "feature": "coolant",
+        "group": "ambient / coolant now",
+        "importance_mae_increase": 7.683725783232095,
+        "std": 0.04328145881333788
+      },
+      {
+        "feature": "i_d",
+        "group": "currents / voltages now",
+        "importance_mae_increase": 7.601216073399495,
+        "std": 0.03140299485615496
+      },
+      {
+        "feature": "u_d",
+        "group": "currents / voltages now",
+        "importance_mae_increase": 3.4196507024920137,
+        "std": 0.01247220228107505
+      },
+      {
+        "feature": "p_loss_proxy",
+        "group": "power & loss proxies",
+        "importance_mae_increase": 2.7625727363301746,
+        "std": 0.010753890944270757
+      },
+      {
+        "feature": "ambient",
+        "group": "ambient / coolant now",
+        "importance_mae_increase": 2.186106506385169,
+        "std": 0.01910222691522528
+      },
+      {
+        "feature": "ambient_minus_coolant",
+        "group": "ambient / coolant now",
+        "importance_mae_increase": 1.8073146906231112,
+        "std": 0.01924074578692215
+      },
+      {
+        "feature": "abs_torque",
+        "group": "speed / torque now",
+        "importance_mae_increase": 1.3450304578063907,
+        "std": 0.009473408647903843
+      },
+      {
+        "feature": "p_elec_proxy",
+        "group": "power & loss proxies",
+        "importance_mae_increase": 1.2106565462695376,
+        "std": 0.0003600221910230154
+      },
+      {
+        "feature": "u_q",
+        "group": "currents / voltages now",
+        "importance_mae_increase": 1.0061991034738333,
+        "std": 0.005008377380791089
+      },
+      {
+        "feature": "i_sq",
+        "group": "currents / voltages now",
+        "importance_mae_increase": 0.9019851825690939,
+        "std": 0.002805683935889752
+      }
+    ],
+    "importance_groups": [
+      {
+        "group": "ambient / coolant now",
+        "n_features": 3,
+        "importance_mae_increase": 13.341143518574953,
+        "std": 0.019395321735478487
+      },
+      {
+        "group": "currents / voltages now",
+        "n_features": 7,
+        "importance_mae_increase": 13.034576400994316,
+        "std": 0.1073050297559027
+      },
+      {
+        "group": "power & loss proxies",
+        "n_features": 3,
+        "importance_mae_increase": 3.6359831809838874,
+        "std": 0.012738327735725941
+      },
+      {
+        "group": "speed / torque now",
+        "n_features": 4,
+        "importance_mae_increase": 1.695975171084153,
+        "std": 0.005567032552336947
+      }
+    ],
+    "importance_baseline_val_mae": 8.770166849303894
+  },
+  "track_B": {
+    "candidate": "B/lightgbm[t2]/enhanced+ewma_long_rolling",
+    "n_features": 45,
+    "columns": [
+      "ambient",
+      "coolant",
+      "motor_speed",
+      "torque",
+      "i_d",
+      "i_q",
+      "u_d",
+      "u_q",
+      "i_sq",
+      "i_mag",
+      "u_mag",
+      "abs_speed",
+      "abs_torque",
+      "p_mech_w",
+      "p_elec_proxy",
+      "p_loss_proxy",
+      "ambient_minus_coolant",
+      "ewm_i_sq_30s",
+      "ewm_i_sq_120s",
+      "ewm_i_sq_600s",
+      "ewm_i_sq_1800s",
+      "ewm_i_sq_7200s",
+      "roll_i_sq_60s",
+      "roll_i_sq_300s",
+      "ewm_abs_speed_30s",
+      "ewm_abs_speed_120s",
+      "ewm_abs_speed_600s",
+      "ewm_abs_speed_1800s",
+      "ewm_abs_speed_7200s",
+      "roll_abs_speed_60s",
+      "roll_abs_speed_300s",
+      "ewm_abs_torque_30s",
+      "ewm_abs_torque_120s",
+      "ewm_abs_torque_600s",
+      "ewm_abs_torque_1800s",
+      "ewm_abs_torque_7200s",
+      "roll_abs_torque_60s",
+      "roll_abs_torque_300s",
+      "ewm_coolant_30s",
+      "ewm_coolant_120s",
+      "ewm_coolant_600s",
+      "ewm_coolant_1800s",
+      "ewm_coolant_7200s",
+      "roll_coolant_60s",
+      "roll_coolant_300s"
+    ],
+    "test": {
+      "aggregate": {
+        "mae": 2.3547323056222624,
+        "rmse": 3.3719025250175987,
+        "r2": 0.986893274044284,
+        "median_ae": 1.7318083784415634,
+        "p95_ae": 6.430018029012281,
+        "max_ae": 27.83554485991106,
+        "bias": 0.24475952110610105,
+        "n": 198499
+      },
+      "profile_level": {
+        "macro_mae": 2.273270367151435,
+        "median_profile_mae": 2.343766388319416,
+        "worst_profile_mae": 3.159667651953186,
+        "worst_profile_id": 21,
+        "best_profile_mae": 0.6852472129882418,
+        "n_profiles": 10
+      }
+    },
+    "per_profile": [
+      {
+        "profile_id": 32,
+        "mae": 2.7429310562678126,
+        "rmse": 3.549649214161251,
+        "r2": 0.9872327173640224,
+        "median_ae": 2.1663337195413632,
+        "p95_ae": 7.466211778896149,
+        "max_ae": 13.242479184161581,
+        "bias": -0.9039871642828065,
+        "n": 20960
+      },
+      {
+        "profile_id": 21,
+        "mae": 3.159667651953186,
+        "rmse": 4.176563809872958,
+        "r2": 0.9777354576832661,
+        "median_ae": 2.7017692643709097,
+        "p95_ae": 7.767539386460413,
+        "max_ae": 27.83554485991106,
+        "bias": 2.6930619961682063,
+        "n": 17321
+      },
+      {
+        "profile_id": 7,
+        "mae": 0.6852472129882418,
+        "rmse": 1.0866644263313758,
+        "r2": 0.9726022200910336,
+        "median_ae": 0.33613174648812816,
+        "p95_ae": 2.8030036829811245,
+        "max_ae": 4.189739790530911,
+        "bias": 0.19849774836400372,
+        "n": 14651
+      },
+      {
+        "profile_id": 27,
+        "mae": 2.704592397503776,
+        "rmse": 3.912668834097188,
+        "r2": 0.9861868507024795,
+        "median_ae": 1.7241311236554218,
+        "p95_ae": 7.338861902706697,
+        "max_ae": 25.034075616730107,
+        "bias": -0.8302635193901269,
+        "n": 35361
+      },
+      {
+        "profile_id": 26,
+        "mae": 2.890994306157073,
+        "rmse": 4.435793695113941,
+        "r2": 0.9889082097528106,
+        "median_ae": 1.65871099838645,
+        "p95_ae": 10.237685826059991,
+        "max_ae": 24.318027333354806,
+        "bias": -0.1340393076037397,
+        "n": 16666
+      },
+      {
+        "profile_id": 14,
+        "mae": 2.4082989142941766,
+        "rmse": 2.8651906796522484,
+        "r2": 0.9729502906565881,
+        "median_ae": 2.189035607936903,
+        "p95_ae": 4.773682474969151,
+        "max_ae": 14.395502627876482,
+        "bias": 1.0716510881174177,
+        "n": 18598
+      },
+      {
+        "profile_id": 69,
+        "mae": 1.7328479098607705,
+        "rmse": 2.1798170303011193,
+        "r2": 0.9883899813597664,
+        "median_ae": 1.4494310698125261,
+        "p95_ae": 4.233010574112759,
+        "max_ae": 8.16711936904872,
+        "bias": 0.5614808218440898,
+        "n": 15350
+      },
+      {
+        "profile_id": 76,
+        "mae": 2.078807546745385,
+        "rmse": 2.7944823611524456,
+        "r2": 0.9830500137228809,
+        "median_ae": 1.6516790636074017,
+        "p95_ae": 5.504709241096077,
+        "max_ae": 18.695745857845367,
+        "bias": 0.09786075160396487,
+        "n": 22188
+      },
+      {
+        "profile_id": 64,
+        "mae": 2.0500828133992774,
+        "rmse": 2.663452657736408,
+        "r2": 0.9672533241436179,
+        "median_ae": 1.6759731692296889,
+        "p95_ae": 5.744240539974992,
+        "max_ae": 12.07466350466806,
+        "bias": 0.41284537611479316,
+        "n": 6250
+      },
+      {
+        "profile_id": 79,
+        "mae": 2.2792338623446553,
+        "rmse": 3.4033715496710393,
+        "r2": 0.9747958769212505,
+        "median_ae": 1.643534704798288,
+        "p95_ae": 5.755018638487442,
+        "max_ae": 25.466732671265945,
+        "bias": 0.5222220484289184,
+        "n": 31154
+      }
+    ],
+    "by_temperature_range": [
+      {
+        "temp_range": "(-0.001, 40.0]",
+        "n": 46985,
+        "mae": 1.4783104371583424,
+        "p95_ae": 4.4796231622221985,
+        "bias": 0.20398573863327263,
+        "rmse": 2.189467283441225
+      },
+      {
+        "temp_range": "(40.0, 60.0]",
+        "n": 36377,
+        "mae": 2.7600918010843247,
+        "p95_ae": 5.854901111651525,
+        "bias": 1.8333707504608363,
+        "rmse": 3.4716934440148126
+      },
+      {
+        "temp_range": "(60.0, 80.0]",
+        "n": 41346,
+        "mae": 2.336941344226843,
+        "p95_ae": 5.60582227253316,
+        "bias": 0.8322240568677522,
+        "rmse": 3.433185928924671
+      },
+      {
+        "temp_range": "(80.0, 100.0]",
+        "n": 32944,
+        "mae": 2.5284498562724584,
+        "p95_ae": 6.021270638888366,
+        "bias": -0.04356479549423017,
+        "rmse": 3.7332499198782116
+      },
+      {
+        "temp_range": "(100.0, 200.0]",
+        "n": 40847,
+        "mae": 2.879753805967178,
+        "p95_ae": 7.937857290062796,
+        "bias": -1.4852061294991157,
+        "rmse": 3.9790486666265887
+      }
+    ],
+    "by_operating_region": [
+      {
+        "speed_region": "high",
+        "torque_region": "high",
+        "n": 24388,
+        "mae": 3.351307257304879
+      },
+      {
+        "speed_region": "high",
+        "torque_region": "low",
+        "n": 21985,
+        "mae": 2.4725954967664188
+      },
+      {
+        "speed_region": "high",
+        "torque_region": "mid",
+        "n": 39150,
+        "mae": 2.5221294221468553
+      },
+      {
+        "speed_region": "low",
+        "torque_region": "high",
+        "n": 15489,
+        "mae": 1.2390929582218182
+      },
+      {
+        "speed_region": "low",
+        "torque_region": "low",
+        "n": 31918,
+        "mae": 1.787188258085052
+      },
+      {
+        "speed_region": "low",
+        "torque_region": "mid",
+        "n": 5013,
+        "mae": 1.951008422139851
+      },
+      {
+        "speed_region": "mid",
+        "torque_region": "high",
+        "n": 35678,
+        "mae": 2.5157189454304163
+      },
+      {
+        "speed_region": "mid",
+        "torque_region": "low",
+        "n": 9092,
+        "mae": 1.6969654855586436
+      },
+      {
+        "speed_region": "mid",
+        "torque_region": "mid",
+        "n": 15786,
+        "mae": 2.6211913130428135
+      }
+    ],
+    "by_elapsed_time_in_profile": [
+      {
+        "elapsed": "0-10 min",
+        "n": 12010,
+        "mae": 5.9080605361449505
+      },
+      {
+        "elapsed": "10-30 min",
+        "n": 24000,
+        "mae": 2.4489112718628343
+      },
+      {
+        "elapsed": "30-60 min",
+        "n": 35049,
+        "mae": 1.8836444867675057
+      },
+      {
+        "elapsed": "1-2 h",
+        "n": 64800,
+        "mae": 2.129910748748371
+      },
+      {
+        "elapsed": ">2 h",
+        "n": 62640,
+        "mae": 2.1335290267288594
+      }
+    ],
+    "region_edges": {
+      "abs_speed_rpm": [
+        -Infinity,
+        796.4855346679688,
+        3051.398681640625,
+        Infinity
+      ],
+      "abs_torque_nm": [
+        -Infinity,
+        15.17084789276123,
+        82.71675872802734,
+        Infinity
+      ]
+    },
+    "inference": {
+      "batch_rows_per_s": 19021.622829729647,
+      "single_row_latency_ms": 3.5080499947071075
+    },
+    "validation_metrics": {
+      "val_mae": 2.20152704381924,
+      "val_rmse": 3.05070968610097,
+      "val_r2": 0.9904342426745375,
+      "val_median_ae": 1.6828385202681702,
+      "val_p95_ae": 6.077953265277233,
+      "val_max_ae": 21.04299830501695,
+      "val_bias": -0.28339438404210215,
+      "val_macro_mae": 2.1856120435652704,
+      "val_worst_profile_mae": 3.581501622408544
+    },
+    "importance_top": [
+      {
+        "feature": "ewm_i_sq_120s",
+        "group": "load history (i\u00b2, speed, torque)",
+        "importance_mae_increase": 10.05007116909377,
+        "std": 0.0050870911465941675
+      },
+      {
+        "feature": "ewm_coolant_600s",
+        "group": "coolant history",
+        "importance_mae_increase": 6.972240883213239,
+        "std": 0.02222287699720586
+      },
+      {
+        "feature": "roll_i_sq_300s",
+        "group": "load history (i\u00b2, speed, torque)",
+        "importance_mae_increase": 6.579337679715312,
+        "std": 0.03134485214846477
+      },
+      {
+        "feature": "roll_coolant_300s",
+        "group": "coolant history",
+        "importance_mae_increase": 5.678549831542036,
+        "std": 0.024365023517171985
+      },
+      {
+        "feature": "ewm_i_sq_600s",
+        "group": "load history (i\u00b2, speed, torque)",
+        "importance_mae_increase": 5.103674754787914,
+        "std": 0.029261018719320474
+      },
+      {
+        "feature": "ewm_coolant_120s",
+        "group": "coolant history",
+        "importance_mae_increase": 2.430407829514419,
+        "std": 0.016378563379441862
+      },
+      {
+        "feature": "ewm_abs_speed_600s",
+        "group": "load history (i\u00b2, speed, torque)",
+        "importance_mae_increase": 1.7797245398305037,
+        "std": 0.009855140590859613
+      },
+      {
+        "feature": "ewm_abs_speed_120s",
+        "group": "load history (i\u00b2, speed, torque)",
+        "importance_mae_increase": 1.6036895537858638,
+        "std": 0.00590122331457571
+      },
+      {
+        "feature": "roll_i_sq_60s",
+        "group": "load history (i\u00b2, speed, torque)",
+        "importance_mae_increase": 0.5537290990896632,
+        "std": 0.006983715897295203
+      },
+      {
+        "feature": "roll_abs_speed_300s",
+        "group": "load history (i\u00b2, speed, torque)",
+        "importance_mae_increase": 0.5340940714826891,
+        "std": 0.0010426918630059275
+      }
+    ],
+    "importance_groups": [
+      {
+        "group": "load history (i\u00b2, speed, torque)",
+        "n_features": 21,
+        "importance_mae_increase": 26.13613031521882,
+        "std": 0.1325783571606306
+      },
+      {
+        "group": "coolant history",
+        "n_features": 7,
+        "importance_mae_increase": 17.575242068642428,
+        "std": 0.0012093933936792886
+      },
+      {
+        "group": "ambient / coolant now",
+        "n_features": 3,
+        "importance_mae_increase": 0.42277096908177186,
+        "std": 0.006752783950552325
+      },
+      {
+        "group": "currents / voltages now",
+        "n_features": 7,
+        "importance_mae_increase": 0.18178673358367625,
+        "std": 0.002187707745131985
+      },
+      {
+        "group": "speed / torque now",
+        "n_features": 4,
+        "importance_mae_increase": 0.06061902899040339,
+        "std": 0.001893911634917296
+      },
+      {
+        "group": "power & loss proxies",
+        "n_features": 3,
+        "importance_mae_increase": 0.04861472996313173,
+        "std": 0.0007323349570033293
+      }
+    ],
+    "importance_baseline_val_mae": 2.2071387777215303
+  },
+  "train_mean_baseline_test": {
+    "aggregate": {
+      "mae": 25.202563722545413,
+      "rmse": 29.646057863277264,
+      "r2": -0.013160150357260925,
+      "median_ae": 26.128211975097656,
+      "p95_ae": 54.664809417724605,
+      "max_ae": 72.95489501953125,
+      "bias": -3.3787676520872214,
+      "n": 198499
+    },
+    "profile_level": {
+      "macro_mae": 24.605067214612422,
+      "median_profile_mae": 24.484549117847816,
+      "worst_profile_mae": 42.90766914577798,
+      "worst_profile_id": 26,
+      "best_profile_mae": 12.51468583251953,
+      "n_profiles": 10
+    }
+  },
+  "case_studies": {
+    "worst_profile_B": 21,
+    "typical_profile_B": 14
+  },
+  "history_ablation_val": [
+    {
+      "history_set": "none",
+      "n_features": 17,
+      "val_mae": 9.442957550949345,
+      "val_mae_seed_mean": 9.415529255611444,
+      "val_mae_seed_std": 0.0551309421455964,
+      "n_seeds": 3,
+      "val_rmse": 12.908487012195478,
+      "val_r2": 0.8287351331018086,
+      "val_macro_mae": 9.283254278265575,
+      "val_worst_profile_mae": 13.56217638783106
+    },
+    {
+      "history_set": "rolling_only",
+      "n_features": 25,
+      "val_mae": 3.7169515527800336,
+      "val_mae_seed_mean": 3.737737805778556,
+      "val_mae_seed_std": 0.0168906360446729,
+      "n_seeds": 3,
+      "val_rmse": 4.977191101089546,
+      "val_r2": 0.974538368463596,
+      "val_macro_mae": 3.6887465875713215,
+      "val_worst_profile_mae": 6.245819557108775
+    },
+    {
+      "history_set": "ewma_short",
+      "n_features": 25,
+      "val_mae": 3.629879544177753,
+      "val_mae_seed_mean": 3.6291241343741176,
+      "val_mae_seed_std": 0.1002604497278704,
+      "n_seeds": 3,
+      "val_rmse": 5.319668376135216,
+      "val_r2": 0.970913818069651,
+      "val_macro_mae": 3.605544559710341,
+      "val_worst_profile_mae": 5.594559186531904
+    },
+    {
+      "history_set": "ewma_medium",
+      "n_features": 29,
+      "val_mae": 2.951959876094679,
+      "val_mae_seed_mean": 3.0318889548728847,
+      "val_mae_seed_std": 0.1108446702251385,
+      "n_seeds": 3,
+      "val_rmse": 4.5097278066209245,
+      "val_r2": 0.9790965361802686,
+      "val_macro_mae": 2.994825737584611,
+      "val_worst_profile_mae": 4.663149625379205
+    },
+    {
+      "history_set": "ewma_long_loads_only",
+      "n_features": 32,
+      "val_mae": 5.4651696618006085,
+      "val_mae_seed_mean": 5.330773066899546,
+      "val_mae_seed_std": 0.1366188760711423,
+      "n_seeds": 3,
+      "val_rmse": 8.154039545699348,
+      "val_r2": 0.9316618490339102,
+      "val_macro_mae": 5.310733640882982,
+      "val_worst_profile_mae": 10.608429588966958
+    },
+    {
+      "history_set": "ewma_long",
+      "n_features": 37,
+      "val_mae": 3.925685050991021,
+      "val_mae_seed_mean": 3.954860122305833,
+      "val_mae_seed_std": 0.0474006008019015,
+      "n_seeds": 3,
+      "val_rmse": 6.019650186100978,
+      "val_r2": 0.962755675176972,
+      "val_macro_mae": 3.780712735967792,
+      "val_worst_profile_mae": 7.616930512465251
+    },
+    {
+      "history_set": "ewma_long_rolling",
+      "n_features": 45,
+      "val_mae": 2.3856330411713547,
+      "val_mae_seed_mean": 2.3190145963515865,
+      "val_mae_seed_std": 0.0768193528276132,
+      "n_seeds": 3,
+      "val_rmse": 3.5732131282209614,
+      "val_r2": 0.9868769301936652,
+      "val_macro_mae": 2.346517075925102,
+      "val_worst_profile_mae": 3.5966227874614005
+    }
+  ],
+  "lightgbm_default_configs_test": [
+    {
+      "candidate": "A/lightgbm/basic",
+      "n_features": 8,
+      "test_mae": 9.55134322268271,
+      "test_rmse": 13.603252907371058,
+      "test_r2": 0.7866809009844973,
+      "test_macro_mae": 8.971128191795156
+    },
+    {
+      "candidate": "A/lightgbm/enhanced",
+      "n_features": 17,
+      "test_mae": 10.31753338993344,
+      "test_rmse": 14.106211962586295,
+      "test_r2": 0.7706150044354529,
+      "test_macro_mae": 9.81918302722146
+    },
+    {
+      "candidate": "B/lightgbm/enhanced+rolling_only",
+      "n_features": 25,
+      "test_mae": 3.604206355301247,
+      "test_rmse": 4.890570692743103,
+      "test_r2": 0.9724283169224526,
+      "test_macro_mae": 3.386096617055297
+    },
+    {
+      "candidate": "B/lightgbm/enhanced+ewma_short",
+      "n_features": 25,
+      "test_mae": 3.8192909941328814,
+      "test_rmse": 5.991135685175087,
+      "test_r2": 0.9586226658293524,
+      "test_macro_mae": 3.7123158702606305
+    },
+    {
+      "candidate": "B/lightgbm/enhanced+ewma_medium",
+      "n_features": 29,
+      "test_mae": 3.000561500037916,
+      "test_rmse": 5.368019720464203,
+      "test_r2": 0.9667820825750622,
+      "test_macro_mae": 2.8785483549196504
+    },
+    {
+      "candidate": "B/lightgbm/enhanced+ewma_long_loads_only",
+      "n_features": 32,
+      "test_mae": 5.204386492184706,
+      "test_rmse": 7.910028725704611,
+      "test_r2": 0.9278725933697508,
+      "test_macro_mae": 4.790557908653352
+    },
+    {
+      "candidate": "B/lightgbm/enhanced+ewma_long",
+      "n_features": 37,
+      "test_mae": 3.447235218390793,
+      "test_rmse": 5.635756418255589,
+      "test_r2": 0.9633858779819113,
+      "test_macro_mae": 3.2168475560464174
+    },
+    {
+      "candidate": "B/lightgbm/enhanced+ewma_long_rolling",
+      "n_features": 45,
+      "test_mae": 2.3897102620962776,
+      "test_rmse": 3.7416963808303443,
+      "test_r2": 0.9838608267512221,
+      "test_macro_mae": 2.2077660038517224
+    }
+  ],
+  "warm_start_robustness_track_B": {
+    "restart_after_s": 3600.0,
+    "profiles_used": [
+      32,
+      21,
+      7,
+      27,
+      26,
+      14,
+      69,
+      76,
+      79
+    ],
+    "mae_full_history": 2.131665241971395,
+    "mae_restarted_history": 2.9821589371588058,
+    "mae_first_30min_after_restart_full_history": 2.0853585722827197,
+    "mae_first_30min_after_restart_restarted": 5.381479327571403,
+    "note": "History buffer emptied at restart_after_s while the motor was already warm."
+  },
+  "monitoring": {
+    "residual_definition": "measured - predicted (Track B)",
+    "calibrated_on": "validation profiles",
+    "smoothing_window_s": 60,
+    "persistence_s": 120,
+    "band_quantile": 0.995,
+    "validation": {
+      "band_raw_c": 11.469077821670068,
+      "band_smoothed_c": 10.769880045212837,
+      "raw_exceed_frac": 0.00500242687667531,
+      "smooth_exceed_frac": 0.004976190372077363,
+      "persistent_alarm_frac": 6.559126149486858e-05,
+      "profiles_with_any_alarm": 1,
+      "n_profiles": 10,
+      "alarm_events_per_hour": 0.03148380551753692,
+      "per_profile": [
+        {
+          "profile_id": 5,
+          "raw_exceed_frac": 0.0,
+          "smooth_exceed_frac": 0.0,
+          "persistent_alarm_frac": 0.0,
+          "alarm_events": 0,
+          "duration_h": 2.053888888888889
+        },
+        {
+          "profile_id": 2,
+          "raw_exceed_frac": 0.016944774500180813,
+          "smooth_exceed_frac": 0.012863563568734825,
+          "persistent_alarm_frac": 0.0,
+          "alarm_events": 0,
+          "duration_h": 2.6884722222222224
+        },
+        {
+          "profile_id": 4,
+          "raw_exceed_frac": 0.0,
+          "smooth_exceed_frac": 0.0,
+          "persistent_alarm_frac": 0.0,
+          "alarm_events": 0,
+          "duration_h": 4.642222222222222
+        },
+        {
+          "profile_id": 24,
+          "raw_exceed_frac": 0.018448218448218447,
+          "smooth_exceed_frac": 0.016916416916416918,
+          "persistent_alarm_frac": 0.000999000999000999,
+          "alarm_events": 1,
+          "duration_h": 2.0854166666666667
+        },
+        {
+          "profile_id": 16,
+          "raw_exceed_frac": 0.002373456042625333,
+          "smooth_exceed_frac": 0.0015500121094696052,
+          "persistent_alarm_frac": 0.0,
+          "alarm_events": 0,
+          "duration_h": 2.8673611111111112
+        },
+        {
+          "profile_id": 74,
+          "raw_exceed_frac": 0.017718109507175624,
+          "smooth_exceed_frac": 0.015613820967131013,
+          "persistent_alarm_frac": 0.0,
+          "alarm_events": 0,
+          "duration_h": 3.3001388888888887
+        },
+        {
+          "profile_id": 50,
+          "raw_exceed_frac": 0.0,
+          "smooth_exceed_frac": 0.0,
+          "persistent_alarm_frac": 0.0,
+          "alarm_events": 0,
+          "duration_h": 1.5013888888888889
+        },
+        {
+          "profile_id": 81,
+          "raw_exceed_frac": 0.0005658669081032141,
+          "smooth_exceed_frac": 0.0,
+          "persistent_alarm_frac": 0.0,
+          "alarm_events": 0,
+          "duration_h": 2.4544444444444444
+        },
+        {
+          "profile_id": 56,
+          "raw_exceed_frac": 0.001237810584790025,
+          "smooth_exceed_frac": 0.007004196479787459,
+          "persistent_alarm_frac": 0.0,
+          "alarm_events": 0,
+          "duration_h": 4.600416666666667
+        },
+        {
+          "profile_id": 65,
+          "raw_exceed_frac": 0.0004489449792986482,
+          "smooth_exceed_frac": 0.0,
+          "persistent_alarm_frac": 0.0,
+          "alarm_events": 0,
+          "duration_h": 5.568611111111111
+        }
+      ]
+    },
+    "test": {
+      "band_raw_c": 11.469077821670068,
+      "band_smoothed_c": 10.769880045212837,
+      "raw_exceed_frac": 0.01225195089144026,
+      "smooth_exceed_frac": 0.011612149179592844,
+      "persistent_alarm_frac": 0.00130479246746835,
+      "profiles_with_any_alarm": 2,
+      "n_profiles": 10,
+      "alarm_events_per_hour": 0.07254444606773837,
+      "per_profile": [
+        {
+          "profile_id": 32,
+          "raw_exceed_frac": 0.0003816793893129771,
+          "smooth_exceed_frac": 0.0,
+          "persistent_alarm_frac": 0.0,
+          "alarm_events": 0,
+          "duration_h": 2.911111111111111
+        },
+        {
+          "profile_id": 21,
+          "raw_exceed_frac": 0.023843888920962994,
+          "smooth_exceed_frac": 0.02482535650366607,
+          "persistent_alarm_frac": 0.00011546677443565614,
+          "alarm_events": 1,
+          "duration_h": 2.4056944444444444
+        },
+        {
+          "profile_id": 7,
+          "raw_exceed_frac": 0.0,
+          "smooth_exceed_frac": 0.0,
+          "persistent_alarm_frac": 0.0,
+          "alarm_events": 0,
+          "duration_h": 2.0348611111111112
+        },
+        {
+          "profile_id": 27,
+          "raw_exceed_frac": 0.016317411837900513,
+          "smooth_exceed_frac": 0.014564067758264755,
+          "persistent_alarm_frac": 0.0,
+          "alarm_events": 0,
+          "duration_h": 4.91125
+        },
+        {
+          "profile_id": 26,
+          "raw_exceed_frac": 0.04440177607104284,
+          "smooth_exceed_frac": 0.044821792871714866,
+          "persistent_alarm_frac": 0.015420616824672988,
+          "alarm_events": 1,
+          "duration_h": 2.314722222222222
+        },
+        {
+          "profile_id": 14,
+          "raw_exceed_frac": 0.0053769222497042695,
+          "smooth_exceed_frac": 0.0030648456823314336,
+          "persistent_alarm_frac": 0.0,
+          "alarm_events": 0,
+          "duration_h": 2.5830555555555557
+        },
+        {
+          "profile_id": 69,
+          "raw_exceed_frac": 0.0,
+          "smooth_exceed_frac": 0.0,
+          "persistent_alarm_frac": 0.0,
+          "alarm_events": 0,
+          "duration_h": 2.1319444444444446
+        },
+        {
+          "profile_id": 76,
+          "raw_exceed_frac": 0.005092842978186407,
+          "smooth_exceed_frac": 0.006219578150351541,
+          "persistent_alarm_frac": 0.0,
+          "alarm_events": 0,
+          "duration_h": 3.0816666666666666
+        },
+        {
+          "profile_id": 64,
+          "raw_exceed_frac": 0.00016,
+          "smooth_exceed_frac": 0.0,
+          "persistent_alarm_frac": 0.0,
+          "alarm_events": 0,
+          "duration_h": 0.8680555555555556
+        },
+        {
+          "profile_id": 79,
+          "raw_exceed_frac": 0.015407331321820632,
+          "smooth_exceed_frac": 0.013417217692752134,
+          "persistent_alarm_frac": 0.0,
+          "alarm_events": 0,
+          "duration_h": 4.326944444444444
+        }
+      ]
+    },
+    "synthetic_injected_offset_on_test": [
+      {
+        "offset_c": 2.0,
+        "n_profiles": 10,
+        "profiles_alarming": 3,
+        "profiles_alarming_without_offset": 2,
+        "profiles_newly_alarming": 2,
+        "median_first_alarm_s": 978.5,
+        "alarm_frac_of_samples": 0.0023778457322203134
+      },
+      {
+        "offset_c": 5.0,
+        "n_profiles": 10,
+        "profiles_alarming": 4,
+        "profiles_alarming_without_offset": 2,
+        "profiles_newly_alarming": 3,
+        "median_first_alarm_s": 1041.25,
+        "alarm_frac_of_samples": 0.02661978145985622
+      },
+      {
+        "offset_c": 10.0,
+        "n_profiles": 10,
+        "profiles_alarming": 9,
+        "profiles_alarming_without_offset": 2,
+        "profiles_newly_alarming": 7,
+        "median_first_alarm_s": 1547.5,
+        "alarm_frac_of_samples": 0.2057844120121512
+      },
+      {
+        "offset_c": 15.0,
+        "n_profiles": 10,
+        "profiles_alarming": 10,
+        "profiles_alarming_without_offset": 2,
+        "profiles_newly_alarming": 8,
+        "median_first_alarm_s": 261.5,
+        "alarm_frac_of_samples": 0.8785535443503494
+      }
+    ],
+    "residual_stats_test": {
+      "mean": -0.24475952110610105,
+      "std": 3.3630074955384757
+    },
+    "caveat": "Healthy held-out profiles only; alarms there are false alarms or model error. Injected offsets are synthetic and do NOT measure real fault-detection accuracy."
+  }
+}

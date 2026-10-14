@@ -1,0 +1,88 @@
+{
+  "horizon_s": 60,
+  "target": "stator_winding at t + horizon (shifted within profile)",
+  "rows_test": 197299,
+  "note": "Evaluated on the same held-out test profiles; rows in the last horizon seconds of each profile are excluded because they have no future label.",
+  "persistence_T_now": {
+    "aggregate": {
+      "mae": 2.662104281782968,
+      "rmse": 4.771229339647475,
+      "r2": 0.9735955760523987,
+      "median_ae": 0.7260818481445312,
+      "p95_ae": 10.79528274536132,
+      "max_ae": 33.80845642089844,
+      "bias": -0.15796558953842543,
+      "n": 197299
+    },
+    "profile_level": {
+      "macro_mae": 2.6331526237094955,
+      "median_profile_mae": 2.6821491639831923,
+      "worst_profile_mae": 4.9625176627328695,
+      "worst_profile_id": 64,
+      "best_profile_mae": 0.329970183847333,
+      "n_profiles": 10
+    }
+  },
+  "track_B_estimate_used_as_forecast": {
+    "aggregate": {
+      "mae": 3.851880322985102,
+      "rmse": 5.449423157048074,
+      "r2": 0.9655557146671897,
+      "median_ae": 2.653283177874897,
+      "p95_ae": 11.22153112748078,
+      "max_ae": 38.56677104453995,
+      "bias": 0.0805443542913405,
+      "n": 197299
+    },
+    "profile_level": {
+      "macro_mae": 3.760191745075075,
+      "median_profile_mae": 4.067157174337355,
+      "worst_profile_mae": 5.226574644650941,
+      "worst_profile_id": 64,
+      "best_profile_mae": 0.8482646111775605,
+      "n_profiles": 10
+    }
+  },
+  "F1_sensor_independent": {
+    "aggregate": {
+      "mae": 3.2353463729539684,
+      "rmse": 4.522003060836792,
+      "r2": 0.9762820135661122,
+      "median_ae": 2.1833007102509967,
+      "p95_ae": 9.341716949491168,
+      "max_ae": 31.389324593139293,
+      "bias": -0.046635155135684364,
+      "n": 197299
+    },
+    "profile_level": {
+      "macro_mae": 3.155079167222898,
+      "median_profile_mae": 3.7078489130420347,
+      "worst_profile_mae": 4.2709824642137,
+      "worst_profile_id": 21,
+      "best_profile_mae": 0.6943738464338481,
+      "n_profiles": 10
+    },
+    "best_iteration": 216
+  },
+  "F2_sensor_assisted": {
+    "aggregate": {
+      "mae": 2.2666437281717204,
+      "rmse": 3.2847166625294593,
+      "r2": 0.9874855450431036,
+      "median_ae": 1.434331406545894,
+      "p95_ae": 6.8702261424774,
+      "max_ae": 25.113113710428678,
+      "bias": 0.35466359899239597,
+      "n": 197299
+    },
+    "profile_level": {
+      "macro_mae": 2.3111636399206335,
+      "median_profile_mae": 2.4325210614095862,
+      "worst_profile_mae": 3.874031585148885,
+      "worst_profile_id": 64,
+      "best_profile_mae": 0.6382182613313696,
+      "n_profiles": 10
+    },
+    "best_iteration": 87
+  }
+}

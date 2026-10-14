@@ -1,0 +1,30 @@
+{
+  "source": "https://www.kaggle.com/datasets/wkirgsn/electric-motor-temperature",
+  "origin": "Paderborn University LEA motor test bench (Kirchg\u00e4ssner, Wallscheid, B\u00f6cker)",
+  "license": "CC BY-SA 4.0",
+  "file_name": "measures_v2.csv",
+  "kaggle_cache_version_dir": "3",
+  "file_size_bytes": 300061411,
+  "sha256": "78f3d150f0f2ad9c5dc7ff24dd12c00d386ad530f48c1589ad24fcd88867d3ad",
+  "rows": 1330816,
+  "profiles": 69,
+  "columns": [
+    "u_q",
+    "coolant",
+    "stator_winding",
+    "u_d",
+    "stator_tooth",
+    "motor_speed",
+    "i_d",
+    "i_q",
+    "pm",
+    "stator_yoke",
+    "ambient",
+    "torque",
+    "profile_id"
+  ],
+  "assumed_sampling_hz": 2.0,
+  "total_hours_at_assumed_rate": 184.84,
+  "timestamps_in_file": false,
+  "note": "Row order inside each profile_id block is used as time (validated contiguity)."
+}

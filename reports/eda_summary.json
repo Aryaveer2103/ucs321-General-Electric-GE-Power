@@ -1,0 +1,239 @@
+{
+  "rows": 1330816,
+  "profiles": 69,
+  "hours_at_assumed_2hz": 184.84,
+  "validation": {
+    "ok": true,
+    "warnings": [],
+    "errors": [],
+    "missing_values": 0,
+    "rows": 1330816,
+    "profiles": 69,
+    "profile_blocks": 69,
+    "duplicate_rows": 0
+  },
+  "profile_length_rows": {
+    "count": 69.0,
+    "mean": 19287.2,
+    "std": 9606.7,
+    "min": 2176.0,
+    "25%": 14403.0,
+    "50%": 17142.0,
+    "75%": 23761.0,
+    "max": 43971.0
+  },
+  "profile_duration_h": {
+    "count": 69.0,
+    "mean": 2.679,
+    "std": 1.334,
+    "min": 0.302,
+    "25%": 2.0,
+    "50%": 2.381,
+    "75%": 3.3,
+    "max": 6.107
+  },
+  "describe": {
+    "u_q": {
+      "count": 1330816.0,
+      "mean": 54.279,
+      "std": 44.173,
+      "min": -25.291,
+      "25%": 12.07,
+      "50%": 48.938,
+      "75%": 90.034,
+      "max": 133.037
+    },
+    "coolant": {
+      "count": 1330816.0,
+      "mean": 36.23,
+      "std": 21.786,
+      "min": 10.624,
+      "25%": 18.698,
+      "50%": 26.9,
+      "75%": 49.857,
+      "max": 101.599
+    },
+    "stator_winding": {
+      "count": 1330816.0,
+      "mean": 66.343,
+      "std": 28.672,
+      "min": 18.586,
+      "25%": 42.788,
+      "50%": 65.11,
+      "75%": 88.141,
+      "max": 141.363
+    },
+    "u_d": {
+      "count": 1330816.0,
+      "mean": -25.134,
+      "std": 63.092,
+      "min": -131.53,
+      "25%": -78.691,
+      "50%": -7.43,
+      "75%": 1.47,
+      "max": 131.47
+    },
+    "stator_tooth": {
+      "count": 1330816.0,
+      "mean": 56.879,
+      "std": 22.952,
+      "min": 18.134,
+      "25%": 38.416,
+      "50%": 56.036,
+      "75%": 75.587,
+      "max": 111.946
+    },
+    "motor_speed": {
+      "count": 1330816.0,
+      "mean": 2202.081,
+      "std": 1859.663,
+      "min": -275.549,
+      "25%": 317.111,
+      "50%": 1999.977,
+      "75%": 3760.639,
+      "max": 6000.015
+    },
+    "i_d": {
+      "count": 1330816.0,
+      "mean": -68.717,
+      "std": 64.933,
+      "min": -278.004,
+      "25%": -115.406,
+      "50%": -51.094,
+      "75%": -2.98,
+      "max": 0.052
+    },
+    "i_q": {
+      "count": 1330816.0,
+      "mean": 37.413,
+      "std": 92.182,
+      "min": -293.427,
+      "25%": 1.096,
+      "50%": 15.774,
+      "75%": 100.612,
+      "max": 301.708
+    },
+    "pm": {
+      "count": 1330816.0,
+      "mean": 58.507,
+      "std": 19.001,
+      "min": 20.857,
+      "25%": 43.152,
+      "50%": 60.266,
+      "75%": 72.008,
+      "max": 113.607
+    },
+    "stator_yoke": {
+      "count": 1330816.0,
+      "mean": 48.188,
+      "std": 19.991,
+      "min": 18.077,
+      "25%": 31.99,
+      "50%": 45.626,
+      "75%": 61.461,
+      "max": 101.148
+    },
+    "ambient": {
+      "count": 1330816.0,
+      "mean": 24.565,
+      "std": 1.93,
+      "min": 8.783,
+      "25%": 23.185,
+      "50%": 24.797,
+      "75%": 26.217,
+      "max": 30.714
+    },
+    "torque": {
+      "count": 1330816.0,
+      "mean": 31.106,
+      "std": 77.136,
+      "min": -246.467,
+      "25%": -0.137,
+      "50%": 10.86,
+      "75%": 91.597,
+      "max": 261.006
+    },
+    "profile_id": {
+      "count": 1330816.0,
+      "mean": 40.793,
+      "std": 25.045,
+      "min": 2.0,
+      "25%": 17.0,
+      "50%": 43.0,
+      "75%": 65.0,
+      "max": 81.0
+    }
+  },
+  "sampling_sanity": {
+    "winding_abs_step_c_median": 0.022083282470703125,
+    "winding_abs_step_c_p99.9": 0.55487060546875,
+    "winding_abs_step_c_max": 1.3939361572265625,
+    "interpretation": "Smooth per-sample steps are consistent with a 2 Hz series; the file has no timestamps, so the rate is taken from the dataset documentation."
+  },
+  "constant_and_duplicate_readings": {
+    "duplicate_rows": 0,
+    "winding_constant_runs_ge_10s": 336,
+    "winding_samples_in_constant_runs": 32896,
+    "fraction_of_rows_with_|speed|<1rpm": 0.13624498052322787,
+    "profiles_with_>50%_standstill": 2,
+    "treatment": "kept: standstill/idle periods are legitimate operating conditions"
+  },
+  "start_state": {
+    "profiles_starting_within_5C_of_ambient": 47,
+    "profiles_starting_warm_(>5C_above_ambient)": 22,
+    "max_start_winding_c": 99.33405303955078
+  },
+  "plausibility": {
+    "ambient": {
+      "min": 8.783478736877441,
+      "max": 30.714204788208008
+    },
+    "coolant": {
+      "min": 10.623751640319824,
+      "max": 101.5985107421875
+    },
+    "motor_speed": {
+      "min": -275.54913330078125,
+      "max": 6000.01513671875
+    },
+    "torque": {
+      "min": -246.46665954589844,
+      "max": 261.0057067871094
+    },
+    "i_d": {
+      "min": -278.0036315917969,
+      "max": 0.051896702498197556
+    },
+    "i_q": {
+      "min": -293.4267883300781,
+      "max": 301.7078552246094
+    },
+    "u_d": {
+      "min": -131.53041076660156,
+      "max": 131.46978759765625
+    },
+    "u_q": {
+      "min": -25.290929794311523,
+      "max": 133.0369873046875
+    },
+    "stator_winding": {
+      "min": 18.5858154296875,
+      "max": 141.36288452148438
+    }
+  },
+  "corr_with_winding_train": {
+    "ambient": 0.383,
+    "coolant": 0.549,
+    "motor_speed": 0.442,
+    "torque": 0.105,
+    "i_d": -0.598,
+    "i_q": 0.081,
+    "u_d": -0.23,
+    "u_q": 0.123,
+    "i_sq": 0.49,
+    "stator_tooth": 0.971,
+    "stator_yoke": 0.87,
+    "pm": 0.791
+  },
+  "corr_torque_iq_train": 0.9966
+}
